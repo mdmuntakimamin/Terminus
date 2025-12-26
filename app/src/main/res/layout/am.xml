@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/terminalScroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:fillViewport="true"
+    android:scrollbars="vertical"
+    android:scrollbarSize="4dp"
+    android:scrollbarThumbVertical="@drawable/l">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/outputText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:fontFamily="monospace"
+            android:textIsSelectable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:longClickable="false"
+            android:cursorVisible="false"
+            android:lineSpacingExtra="2dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="~"
+                android:textColor="#00FF00"
+                android:textSize="12sp"
+                android:fontFamily="monospace"
+                android:textStyle="bold"
+                android:textIsSelectable="false" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" $ "
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:fontFamily="monospace"
+                android:textIsSelectable="false" />
+
+            <EditText
+                android:id="@+id/commandInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:fontFamily="monospace"
+                android:singleLine="true"
+                android:inputType="textNoSuggestions|textVisiblePassword"
+                android:imeOptions="actionDone"
+                android:textCursorDrawable="@drawable/t"
+                android:padding="0dp"
+                android:textIsSelectable="false"
+                android:textColorHighlight="@android:color/transparent"
+                android:textSelectHandle="@android:color/transparent"
+                android:textSelectHandleLeft="@android:color/transparent"
+                android:textSelectHandleRight="@android:color/transparent" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

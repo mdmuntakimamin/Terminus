@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:padding="2dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/fileNameTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="11sp"
+            android:fontFamily="monospace" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/editorMain"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:gravity="top"
+        android:padding="10dp"
+        android:textColor="#39FF14"
+        android:textSize="12sp"
+        android:fontFamily="monospace"
+        android:inputType="textMultiLine|textNoSuggestions|textVisiblePassword"
+        android:textCursorDrawable="@drawable/t"
+        android:scrollbars="vertical" />
+
+    <TextView
+        android:id="@+id/editorStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="#FFFFFF"
+        android:textColor="#000000"
+        android:textSize="11sp"
+        android:fontFamily="monospace" />
+</LinearLayout>

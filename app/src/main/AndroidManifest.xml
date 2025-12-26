@@ -1,0 +1,82 @@
+
+<manifest
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.prieagle">
+	<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+	<uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+	<application
+		android:allowBackup="true"
+		android:icon="@mipmap/ic_launcher"
+		android:label="@string/app_name"
+		android:name=".SketchApplication"
+		android:requestLegacyExternalStorage="true"
+		android:usesCleartextTraffic="true"
+		android:theme="@style/AppTheme">
+		<activity
+			android:name=".MainActivity"
+			android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+			android:hardwareAccelerated="true"
+			android:supportsPictureInPicture="true"
+			android:theme="@style/NoActionBar"
+			android:screenOrientation="portrait"
+			android:exported="true">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity
+			android:name=".DebugActivity"
+			android:screenOrientation="portrait"
+			android:theme="@style/AppTheme.DebugActivity" />
+		<activity
+			android:name="com.terminal.NotificationHelper"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="com.terminal.NanoActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="com.terminal.PythonActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="com.prieagle.NanoActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="com.prieagle.NotificationHelper"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="com.prieagle.PythonActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="com.prieagle.MainActivity"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="com.prieagle.TerminalHelper"
+			android:configChanges="orientation|screenSize" />
+		<activity
+			android:name="com.prieagle.TextEditor"
+			android:configChanges="orientation|screenSize" />
+		<uses-library
+			android:name="org.apache.http.legacy"
+			android:required="false" />
+		<service
+			android:name="com.terminal.TerminalService"
+			android:enabled="true" />
+		<service
+			android:name="com.prieagle.TerminalService"
+			android:enabled="true" />
+<service
+    android:name=".TerminalService"
+    android:foregroundServiceType="specialUse"
+    android:exported="false">
+    <property
+        android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+        android:value="Terminal emulator session for background tasks" />
+</service>
+	</application>
+</manifest>
